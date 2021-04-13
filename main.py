@@ -1,5 +1,13 @@
 import keyboard
+import random
 from playsound import playsound
+
+keypress_generic_sounds = [
+    'sounds/Keystroke1.mp3',
+    'sounds/Keystroke2.mp3',
+    'sounds/Keystroke3.mp3',
+]
+
 
 def main():
     print('ClicKeys clackering');
@@ -7,16 +15,13 @@ def main():
     keyboard.on_press(key_pressed);
     keyboard.wait();
 
-    # while True:
-        # print('key pressed');
 
 def key_pressed(key):
     print('key pressed: {0}'.format(key.name));
-    playsound('./sounds/Keystroke1.mp3', False);
+    playsound(random.choice(keypress_generic_sounds), False);
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     main();
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
